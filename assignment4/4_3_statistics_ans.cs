@@ -20,7 +20,24 @@ namespace statistics
 
             int stdCount = data.GetLength(0) - 1;
             // ---------- TODO ----------
-            
+            double m_average = 0;
+            double s_average = 0;
+            double e_average = 0;
+
+            for(int i = 1; i < stdCount; i++)
+            {
+                m_average += data[i, 2];
+                s_average += data[i, 3];
+                e_average += data[i, 4];
+            }
+            m_average /= stdCount;
+            s_average /= stdCount;
+            e_average /= stdCount;
+
+            Console.WriteLine("Math: "+m_average);
+            Console.WriteLine("Average Scores:");
+            Console.WriteLine("Average Scores:");
+            Console.WriteLine("Average Scores:");
             // --------------------
         }
     }
