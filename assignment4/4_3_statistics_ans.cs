@@ -34,10 +34,14 @@ namespace statistics
             s_average /= stdCount;
             e_average /= stdCount;
 
-            Console.WriteLine("Math: "+m_average);
-            Console.WriteLine("Average Scores:");
-            Console.WriteLine("Average Scores:");
-            Console.WriteLine("Average Scores:");
+            string m = m_average.ToString("#.##");
+            string s = s_average.ToString("#.##");
+            string e = e_average.ToString("#.##");
+
+            Console.WriteLine($"Average Scores:\nMath: " + m + "\nScience: " + s + "\nEnglish: " + e);
+
+
+            Console.WriteLine("Max and min Scores: ")
             // --------------------
         }
     }
