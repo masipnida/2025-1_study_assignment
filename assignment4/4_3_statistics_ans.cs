@@ -24,7 +24,7 @@ namespace statistics
             double s_average = 0;
             double e_average = 0;
 
-            for(int i = 1; i < stdCount; i++)
+            for(int i = 1; i <= stdCount; i++)
             {
                 m_average += data[i, 2];
                 s_average += data[i, 3];
@@ -40,8 +40,29 @@ namespace statistics
 
             Console.WriteLine($"Average Scores:\nMath: " + m + "\nScience: " + s + "\nEnglish: " + e);
 
+            double[] max = new double[3];
+            double[] min = new double[3];
 
-            Console.WriteLine("Max and min Scores: ")
+            for (int i = 0; i < 3; i++)
+            {
+                max[i] = data[1, 2 + i];
+                min[i] = data[1, 2 + i];
+                for(int j = 2; j <= stdCount; j++)
+                {
+                    if (max[i] < data[j, 2 + i])
+                    {
+                        max[i] = data[j, 2 + i];
+                    }
+                    if (min[i] > data[j, 2 + i])
+                    {
+                        min[i] = data[j, 2 + i]; 
+                    }
+                }
+            }
+
+            Console.WriteLine($"Max and min Scores:\nMath: ({max[0]}, {min[0]})\nScience: ({max[1]}, {min[1]})\nEnglish: ({max[2]}, {min[2]})");
+
+            string[] rank = new string[stdCount];
             // --------------------
         }
     }
